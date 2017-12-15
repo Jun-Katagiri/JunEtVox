@@ -18,6 +18,12 @@ class MyTabView : UIView {
         
     }
     
+    override func didAddSubview(_ subview: UIView) {
+        super.didAddSubview(subview)
+        subview.frame = self.frame
+        
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         

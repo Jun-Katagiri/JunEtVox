@@ -11,15 +11,36 @@ import UIKit
 class ViewController: UIViewController {
     
     var tab:MyTabView = MyTabView()
+    let tab1 = UIView()
+    let tab2 = UIView()
+    let tab3 = UIView()
+    let tab4 = UIView()
+    let tab5 = UIView()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        tab.backgroundColor = UIColor.red
-        tab.frame = view.frame
         
+        //親タブ追加
+        tab.frame = view.frame
         view.addSubview(tab)
-        //view.backgroundColor = UIColor.blue
+        
+        tab1.backgroundColor = UIColor.red
+        tab2.backgroundColor = UIColor.blue
+        tab3.backgroundColor = UIColor.green
+        tab4.backgroundColor = UIColor.yellow
+        tab5.backgroundColor = UIColor.black
+        
+        // 子タブを番号と一緒に追加
+        tab.addTab(tab1, tabNo: 1)
+        tab.addTab(tab2, tabNo: 2)
+        tab.addTab(tab3, tabNo: 3)
+        tab.addTab(tab4, tabNo: 4)
+        tab.addTab(tab5, tabNo: 5)
+
+        // 番号指定で上位表示
+        tab.frontTab(tabNo: 3) // green
     }
 
     override func didReceiveMemoryWarning() {
